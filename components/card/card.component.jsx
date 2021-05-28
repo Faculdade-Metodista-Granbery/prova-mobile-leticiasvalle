@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
-import { Card, Paragraph, Button } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
+import { Card, Paragraph, Button, ProgressBar } from 'react-native-paper';
 
 
 const styles = StyleSheet.create({
@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     title: {
         textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: 18
+        fontSize: 18,
+        height: 24
     }
 });
 
@@ -57,6 +58,12 @@ const CardQuote = ({ task, background }) => {
                 </Card.Actions>
                 <Paragraph style={styles.title}>{task}</Paragraph>
             </Card.Content>
+            <View style={{ height: 15, backgroundColor: '#FAE8E0'}}>
+                <ProgressBar
+                    color='#541616'
+                    style={{ height: 5}}>
+                </ProgressBar>
+            </View>
         </Card>
     )
 }
