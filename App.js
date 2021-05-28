@@ -15,8 +15,16 @@ export default function App() {
       <StatusBar
         animated={true}
         backgroundColor="#c64242"
-       />
-          <CardQuote />
+      />
+      
+    <FlatList
+      data={notList}
+      keyExtractor={item => item.id}
+      renderItem={({ item }) =>
+        <CardQuote task={item.task}
+        background={item.background} />
+      }>
+    </FlatList>
 
 
     </SafeAreaView>
