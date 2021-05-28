@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
     },
     buttons: {
         flex: 1
+    },
+    title: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 18
     }
 });
 
@@ -50,7 +55,7 @@ const CardQuote = ({ task, background }) => {
                             onPress={handlePlay}
                     />
                 </Card.Actions>
-                <Paragraph>{task}</Paragraph>
+                <Paragraph style={styles.title}>{task}</Paragraph>
             </Card.Content>
         </Card>
     )
