@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { Card, Paragraph } from 'react-native-paper';
+import { Card, Paragraph, Button } from 'react-native-paper';
 
 
 const styles = StyleSheet.create({
@@ -18,9 +18,22 @@ const styles = StyleSheet.create({
     cover: {
         height: 220,
     },
+    buttons: {
+        flex: 1
+    }
 });
 
 const CardQuote = ({ task, background }) => {
+
+    const [playButton, setPlaybutton] = useState("play");
+
+    const handlePlay = () => {
+        if(playButton === "play"){
+            setPlaybutton("pause")
+        }else{
+            setPlaybutton("play")
+        }
+    }
 
     return (
         <Card style={styles.card}>
@@ -28,11 +41,17 @@ const CardQuote = ({ task, background }) => {
                 style={styles.cover}
                 resizeMode={`cover`}
                 source={{ uri: background }} />
-                <Paragraph>{task}</Paragraph>
             <Card.Content style={styles.content}>
+                <Card.Actions>
+                    <Button style={styles.buttons}
+                            icon={playButton}
+                            color="#541616"
+                            labelStyle={{ fontSize: 80}}
+                            onPress={handlePlay}
+                    />
+                </Card.Actions>
+                <Paragraph>{task}</Paragraph>
             </Card.Content>
-            <Card.Actions>
-            </Card.Actions>
         </Card>
     )
 }
