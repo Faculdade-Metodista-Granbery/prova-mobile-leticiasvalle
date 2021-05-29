@@ -6,10 +6,10 @@ export const colors = Object.freeze ({
         corBarra: '#541616'
     },
     otherTheme: {
-        corFundo: '#a4abac',
-        corFundoCard: '#afa29c',
-        corBotao: '#3a0f0f',
-        corBarra: '#3a0f0f'
+        corFundo: '#292929',
+        corFundoCard: '#b7b7b7',
+        corBotao: '#541616',
+        corBarra: '#541616'
     }
 
 })
