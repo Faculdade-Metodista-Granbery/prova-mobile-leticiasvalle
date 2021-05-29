@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, FlatList, StatusBar } from 'react-native';
+import { StyleSheet, SafeAreaView, FlatList } from 'react-native';
 import CardQuote from './components/card/card.component';
 import databaseFactory from './factories/database.factory';
 import { useList } from 'react-firebase-hooks/database';
+import { colors } from './utils/colors';
 
 export default function App() {
 
@@ -10,11 +11,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar
-        animated={true}
-        backgroundColor="#c64242"
-      />
-      
+
     <FlatList
       data={cards}
       keyExtractor={item => item.id}
@@ -34,7 +31,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EBF5F7',
+    backgroundColor: colors.originalTheme.corFundo,
     alignItems: 'center',
     justifyContent: 'center',
   },

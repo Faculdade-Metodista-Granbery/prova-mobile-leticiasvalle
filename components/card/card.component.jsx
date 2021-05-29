@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Card, Paragraph, Button, ProgressBar } from 'react-native-paper';
-
+import { colors } from '../../utils/colors';
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: '#EBF5F7',
         margin: 10,
         borderRadius: 20,
         flex: 1,
@@ -13,7 +12,7 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
     },
     content: {
-        backgroundColor: '#FAE8E0',
+        backgroundColor: colors.originalTheme.corFundoCard,
     },
     cover: {
         height: 220,
@@ -55,17 +54,17 @@ const CardQuote = ({ task, background }) => {
                 <Card.Actions>
                     <Button style={styles.buttons}
                             icon={playButton}
-                            color="#541616"
+                            color={colors.originalTheme.corBotao}
                             labelStyle={{ fontSize: 80}}
                             onPress={handlePlay}
                     />
                 </Card.Actions>
                 <Paragraph style={styles.title}>{task}</Paragraph>
             </Card.Content>
-            <View style={{ height: 15, backgroundColor: '#FAE8E0'}}>
+            <View style={{ height: 15, backgroundColor: colors.originalTheme.corFundoCard}}>
                 <ProgressBar
                     progress={progress}
-                    color='#541616'
+                    color={colors.originalTheme.corBarra}
                     style={{ height: 5}}>
                 </ProgressBar>
             </View>
