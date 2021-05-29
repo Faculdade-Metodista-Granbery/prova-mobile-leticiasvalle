@@ -36,10 +36,14 @@ const CardQuote = ({ task, background }) => {
     const handlePlay = () => {
         if(playButton === "play"){
             setPlaybutton("pause")
+            setProgress(1)
         }else{
             setPlaybutton("play")
+            setProgress(0)
         }
     }
+
+    const [progress, setProgress] = useState(null);
 
     return (
         <Card style={styles.card}>
@@ -60,6 +64,7 @@ const CardQuote = ({ task, background }) => {
             </Card.Content>
             <View style={{ height: 15, backgroundColor: '#FAE8E0'}}>
                 <ProgressBar
+                    progress={progress}
                     color='#541616'
                     style={{ height: 5}}>
                 </ProgressBar>
